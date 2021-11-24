@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  veiculo: one
+  dataEntrada: 2021-11-24 14:15:41
+  dataSaida: 2021-11-24 14:15:41
+  isEntrada: false
+
+two:
+  veiculo: two
+  dataEntrada: 2021-11-24 14:15:41
+  dataSaida: 2021-11-24 14:15:41
+  isEntrada: false
