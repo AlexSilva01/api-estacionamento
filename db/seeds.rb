@@ -28,7 +28,6 @@ end
     HistoricoEntradaSaida.create({
         veiculo_id: Faker::Number.between(from: 1, to: 5),
         dataEntrada: DateTime.now(),
-        dataSaida: DateTime.now(),
         isEntrada: Faker::Boolean.boolean
     })
 end
