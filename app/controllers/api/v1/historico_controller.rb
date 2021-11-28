@@ -5,6 +5,10 @@ module Api
                 historicos = HistoricoEntradaSaida.order('id ASC')
                 render json: {status: 'SUCCESS', message: 'Historicos carregados', data: historicos}, status: :ok
             end
+            def show
+                historico = HistoricoEntradaSaida.find(params[:id])
+                render json: {status: 'Sucess', message: 'Historico carregado', data: historico}, status: :ok
+            end
             def create
                 placa = params[:placa]
                 veiculo = Veiculo.find_by(placa: placa)
