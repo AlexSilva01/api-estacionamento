@@ -25,6 +25,25 @@ module Api
                     render json: {status: 'ERROR', message: 'Historico não salvo', data: historico.errors}, status: :unprocessable_entity
                 end
             end
+            def update
+                historico = HistoricoEntradaSaida.find(params[:id])
+                if historico.update(historico_params)
+                    render json: {status: 'Sucess', message: 'Historico atualizado', data: historico}, status: :ok
+                else
+                    render json: {status: 'ERROR', message: 'Historico não atualizado', data: historico.errors}, status: :unprocessable_entity
+                end
+            end
+            def destroy
+                historico = HistoricoEntradaSaida.find(params[:id])
+                historico.destroy
+                render json: {status: 'Sucess', message: 'Historico excluído', data: historico}, status: :ok
+            end
+
+            private
+
+            def historico_params
+                params.permit(:veiculo,:dataEntrada,:dataSaida,:isEntrada)
+            end
         end
     end
 end
